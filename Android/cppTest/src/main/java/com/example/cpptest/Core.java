@@ -1,11 +1,9 @@
-package ademar.androidioscppexample;
+package com.example.cpptest;
 
-public class CoreWrapper {
-
+public class Core {
     public native String concatenateMyStringWithCppString(String myString);
 
     static {
         System.loadLibrary("native-lib");
     }
-
 }

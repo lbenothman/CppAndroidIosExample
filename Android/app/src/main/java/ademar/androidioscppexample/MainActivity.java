@@ -1,10 +1,11 @@
 package ademar.androidioscppexample;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.cpptest.Core;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,17 +14,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        CoreWrapper coreWrapper = new CoreWrapper();
+        Core coreWrapper = new Core();
 
         TextView textView = findViewById(R.id.text);
         textView.setText(coreWrapper.concatenateMyStringWithCppString("Java"));
-
-        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, KotlinActivity.class));
-            }
-        });
     }
 
 }
